@@ -1,0 +1,15 @@
+{
+  "name": "contact-svc",
+  "version": "1.0.0-beta",
+  "description": "micro service for ui-webkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "krishna",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.9.26",
+    "underscore": "^1.10.2"
+  }
+}
