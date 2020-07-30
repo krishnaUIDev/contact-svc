@@ -1,0 +1,7 @@
+{
+  "name": "app dev",
+  "mail": {
+    "host": "dev-main",
+    "password": "app_password"
+  }
+}
