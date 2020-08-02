@@ -1,7 +1,6 @@
 const debug = require("debug")("app:startup");
 //const dbDebugger = require("debug")("app:db");
 const express = require("express");
-const Joi = require("joi");
 const app = express();
 const helmet = require("helmet");
 const morgan = require("morgan");
