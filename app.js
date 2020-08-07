@@ -34,21 +34,21 @@
 
 // // emit making a noise, produce- singneling
 
-const http = require("http");
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    res.write("test");
-    res.end();
-  }
-  if ((req.url = "/api/courses")) {
-    res.write(JSON.stringify([1, 2, 3, 3]));
-    res.end();
-  }
-});
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//   if (req.url === "/") {
+//     res.write("test");
+//     res.end();
+//   }
+//   if ((req.url = "/api/courses")) {
+//     res.write(JSON.stringify([1, 2, 3, 3]));
+//     res.end();
+//   }
+// });
 
 // server.on("connection", (socket) => {
 //   console.log("new connection");
 // });
-server.listen(3001);
+// server.listen(3001);
 
-console.log("Listen on port 300 .. ");
+// console.log("Listen on port 300 .. ");
