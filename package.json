@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --verbose --coverage",
-    "start": "node index.js"
+    "start": "node index.js",
+    "commit": "git add . && git commit -m 'added'"
   },
   "engines": {
     "node": "12.18.3",

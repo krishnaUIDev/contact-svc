@@ -23,11 +23,5 @@ app.set("views", "./views"); // to set default template
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, "0.0.0.0", function () {
-  winston.info(`Listing on port ${port}`);
+  winston.error(`Listing on port ${port}`);
 });
-
-// const server_port = process.env.YOUR_PORT || process.env.PORT || 3001;
-// const server_host = process.env.YOUR_HOST || "0.0.0.0";
-// app.listen(server_port, server_host, function () {
-//   console.log("Listening on port %d", server_port);
-// });
