@@ -6,3 +6,5 @@
 
 let p = Promise.resolve(1);
 p.then((a) => console.log(a));
+
+//test
