@@ -5,6 +5,8 @@ require("express-async-errors");
 
 module.exports = function () {
   const dbConnection = config.get("mongoConnection");
+  const connection =
+    "mongodb+srv://user:1234@cluster0.sln7s.mongodb.net/playground?retryWrites=true&w=majority";
 
   winston.handleExceptions(
     new winston.transports.Console({ colorize: true, PrettyPrint: true }),
@@ -25,7 +27,7 @@ module.exports = function () {
   winston.configure({
     transports: [
       new winston.transports.MongoDB({
-        db: `${dbConnection}/logs`,
+        db: `${connection}/logs`,
         level: "error",
       }),
     ],
