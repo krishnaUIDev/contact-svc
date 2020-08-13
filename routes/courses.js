@@ -2,6 +2,7 @@ const { Course, validate } = require("../models/courses.model");
 const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 router.get("/", async (req, res) => {
   const courses = await Course.find().sort("name");
@@ -39,7 +40,7 @@ router.put("/:id", async (req, res) => {
   res.send(course);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", [auth, admin], async (req, res) => {
   const course = await Course.findByIdAndRemove(req.params.id);
   if (!course) return res.status(404).send("The course id not found");
   res.send(course);
