@@ -1,3 +1,4 @@
 {
-  "name": "My Express APp"
+  "name": "My Express APp",
+  "jwtPrivateKey": "user_jwtPrivateKey"
 }

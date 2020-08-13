@@ -1,5 +1,6 @@
 {
   "name": "app prod",
+  "jwtPrivateKey": "user_jwtPrivateKey",
   "mail": {
     "host": "dev-main prod"
   }

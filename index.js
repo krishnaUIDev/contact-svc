@@ -1,5 +1,6 @@
-const debug = require("debug")("app:startup");
-//const dbDebugger = require("debug")("app:db");
+require("dotenv").config();
+const Joi = require("Joi");
+Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -8,13 +9,19 @@ const morgan = require("morgan");
 const config = require("config");
 const courses = require("./routes/courses");
 const home = require("./routes/home");
+const users = require("./routes/users");
+const auth = require("./routes/auth");
 const logger = require("./middleware/logger");
+
+// jwt initialization
+
+if (!config.get("jwtPrivateKey")) {
+  console.error("FATAL ERROR: jwtPrivateKey is not defined");
+  process.exit(1);
+}
 
 app.set("view engine", "pug");
 app.set("views", "./views"); // to set default template
-// to get env
-// console.log("node path", process.env.NODE_PATH);
-// console.log("env", app.get("env"));
 
 app.use(express.json()); // req.body
 app.use(helmet()); //to secure http request
@@ -30,16 +37,15 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => console.log("conneted to mogodb.."))
-  .catch((err) => console.log(err.message));
+  .catch((err) => console.log("could not connect to mongo.."));
+mongoose.set("useCreateIndex", true);
 
 // routes setup
 app.use("/api/courses", courses);
 app.use("/", home);
-// config
-
-//console.log("application name" + config.get("name"));
-//console.log("application name" + config.get("mail.host"));
-//console.log("application name" + config.get("mail.password"));
+// autheiticatoin
+app.use("/api/users", users);
+app.use("/api/auth", auth);
 
 // customer middleware functions
 if (app.get("env") === "development") {
@@ -47,15 +53,6 @@ if (app.get("env") === "development") {
   app.use(morgan("tiny"));
   //debug("mogan enabled");
 }
-
-//db work
-
-//dbDebugger("conected to the db");
-
-// app.use((req, res, next) => {
-//   console.log("Authencations...");
-//   next();
-// });
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Listing on port ${port}`));

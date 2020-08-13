@@ -1,5 +1,6 @@
 {
   "name": "app dev",
+  "jwtPrivateKey": "user_jwtPrivateKey",
   "mail": {
     "host": "dev-main",
     "password": "app_password"

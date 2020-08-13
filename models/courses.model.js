@@ -20,6 +20,7 @@ const Course = mongoose.model(
 function validateCouse(arg) {
   const schema = Joi.object({
     name: Joi.string().min(3).required(),
+    //  name: Joi.objectId().min(3).required(),
     phone: Joi.number(),
     isGold: Joi.boolean(),
     category: Joi.array(),
