@@ -5,7 +5,7 @@ const config = require("config");
 module.exports = function () {
   const dbConnection = config.get("mongoConnection");
   mongoose
-    .connect(`${dbConnection}/playground`, {
+    .connect(dbConnection, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
