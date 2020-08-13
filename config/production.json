@@ -1,6 +1,7 @@
 {
   "name": "app prod",
   "jwtPrivateKey": "user_jwtPrivateKey",
+  "mongoConnection": "mongodb://localhost",
   "mail": {
     "host": "dev-main prod"
   }

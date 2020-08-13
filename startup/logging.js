@@ -1,8 +1,11 @@
 const winston = require("winston");
+const config = require("config");
 require("winston-mongodb");
 require("express-async-errors");
 
 module.exports = function () {
+  const dbConnection = config.get("mongoConnection");
+
   winston.handleExceptions(
     new winston.transports.Console({ colorize: true, PrettyPrint: true }),
     new winston.transports.File({ filename: "uncaughtExceptions.log" })
@@ -22,7 +25,7 @@ module.exports = function () {
   winston.configure({
     transports: [
       new winston.transports.MongoDB({
-        db: "mongodb://localhost/logs",
+        db: `${dbConnection}/logs`,
         level: "error",
       }),
     ],

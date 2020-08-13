@@ -1,9 +1,11 @@
 const winston = require("winston");
 const mongoose = require("mongoose");
+const config = require("config");
 
 module.exports = function () {
+  const dbConnection = config.get("mongoConnection");
   mongoose
-    .connect("mongodb://localhost/playground", {
+    .connect(`${dbConnection}/playground`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })

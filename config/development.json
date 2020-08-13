@@ -1,6 +1,7 @@
 {
   "name": "app dev",
   "jwtPrivateKey": "user_jwtPrivateKey",
+  "mongoConnection": "mongodb://localhost",
   "mail": {
     "host": "dev-main",
     "password": "app_password"

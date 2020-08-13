@@ -1,4 +1,5 @@
 {
   "name": "My Express APp",
-  "jwtPrivateKey": "user_jwtPrivateKey"
+  "jwtPrivateKey": "user_jwtPrivateKey",
+  "mongoConnection": "mongodb://localhost"
 }
