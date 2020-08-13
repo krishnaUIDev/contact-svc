@@ -4,7 +4,7 @@
   "description": "micro service for ui-webkit",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll --verbose --coverage"
   },
   "author": "krishna",
   "license": "ISC",
