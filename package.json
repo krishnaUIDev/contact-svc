@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watchAll --verbose --coverage",
     "start": "node index.js",
-    "commit": "git add . && git commit -m 'added'"
+    "commit": "git add . && git commit -m 'added'",
+    "deploy": "git push heroku master"
   },
   "engines": {
     "node": "12.18.3",

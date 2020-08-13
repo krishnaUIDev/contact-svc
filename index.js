@@ -21,7 +21,7 @@ require("./startup/prod")(app);
 app.set("view engine", "pug");
 app.set("views", "./views"); // to set default template
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, "0.0.0.0", function () {
+const port = process.env.PORT || 3001;
+app.listen(port, "0.0.0.0", function () {
   winston.error(`Listing on port ${port}`);
 });
