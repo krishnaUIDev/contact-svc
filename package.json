@@ -8,7 +8,8 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "12.18.3",
+    "npm": "6.14.6"
   },
   "author": "krishna",
   "license": "ISC",
