@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const auth = require("../middleware/auth");
+const mailer = require("./mailer");
 
 router.get("/me", auth, async (req, res) => {
   const user = await Users.findById(req.user._id).select("-password");
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
   let user = await Users.findOne({ email: req.body.email });
   if (user) return res.status(400).send("User already registred");
   user = new Users(_.pick(req.body, ["name"], ["email"], ["password"]));
+  await mailer(user.email);
   //hasing password
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);

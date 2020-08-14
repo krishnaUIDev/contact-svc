@@ -6,5 +6,7 @@
   "mail": {
     "host": "dev-main",
     "password": "app_password"
-  }
+  },
+  "email": "kondoju.krishna1@gmail.com",
+  "emailPass": "krishnakanth143"
 }
