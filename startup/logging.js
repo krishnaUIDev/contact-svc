@@ -8,9 +8,11 @@ module.exports = function () {
   const connection =
     "mongodb+srv://user:1234@cluster0.sln7s.mongodb.net/playground?retryWrites=true&w=majority";
 
-  winston.handleExceptions(
+  winston.exceptions.handle(
     new winston.transports.Console({ colorize: true, PrettyPrint: true }),
-    new winston.transports.File({ filename: "uncaughtExceptions.log" })
+    new winston.transports.File({
+      filename: "uncaughtExceptions.log",
+    })
   );
 
   process.on("unhandledRejection", (ex) => {
@@ -21,7 +23,11 @@ module.exports = function () {
 
   // log transporter to the local file
   winston.configure({
-    transports: [new winston.transports.File({ filename: "logfile.log" })],
+    transports: [
+      new winston.transports.File({
+        filename: "logfile.log",
+      }),
+    ],
   });
   //db logger transport
   winston.configure({
