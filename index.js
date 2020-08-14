@@ -28,4 +28,5 @@ app.set("views", "./views"); // to set default template
 // });
 
 const port = process.env.PORT || config.get("PORT");
+console.log(port, "--");
 app.listen(port, () => winston.info(`Listening on port ${port}...`));
