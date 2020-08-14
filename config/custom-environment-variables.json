@@ -2,6 +2,7 @@
   "name": "app dev",
   "jwtPrivateKey": "user_jwtPrivateKey",
   "mongoConnection": "mongoConnection",
+  "PORT": "PORT",
   "mail": {
     "host": "dev-main",
     "password": "app_password"

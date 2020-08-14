@@ -1,6 +1,7 @@
 {
   "name": "app dev",
   "jwtPrivateKey": "user_jwtPrivateKey",
+  "PORT": "3001",
   "mongoConnection": "mongodb+srv://user:1234@cluster0.sln7s.mongodb.net/playground?retryWrites=true&w=majority",
   "mail": {
     "host": "dev-main",
