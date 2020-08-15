@@ -1,8 +1,14 @@
 FROM node:alpine
-WORKDIR '/app'
+# WORKDIR '/app'
 
-COPY package.json .
-RUN npm install
+# COPY package.json .
+# RUN npm install
 
+# COPY . .
+# CMD ["nodemon","index.js"]
+ENV APP_ROOT=/opt/app-root 
+WORKDIR /opt/app-root 
 COPY . .
-CMD ["nodemon","index.js"]
+
+USER 1001
+ENTRYPOINT ["node", "index.js"]
