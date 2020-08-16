@@ -1,8 +1,8 @@
 require("dotenv").config();
-const winston = require("winston");
 const express = require("express");
 const app = express();
 const config = require("config");
+//const pool = require("./startup/pgdb");
 
 require("./startup/logging")();
 require("./startup/routes")(app);
@@ -25,6 +25,13 @@ app.set("views", "./views"); // to set default template
 // const port = process.env.PORT || 3001;
 // app.listen(port, "0.0.0.0", function () {
 //   winston.error(`Listing on port ${port}`);
+// });
+// app.get("/todos", async (req, res) => {
+//   try {
+//     const data = await pool.query("SELECT * FROM courses");
+//   } catch (ex) {
+//     console.log(ex);
+//   }
 // });
 
 const port = process.env.PORT || config.get("PORT");
