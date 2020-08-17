@@ -38,5 +38,27 @@ function validateUser(arg) {
   return schema.validate(arg);
 }
 
+const addressSchema = new mongoose.Schema({
+  street: { type: String, required: true, minlength: 5, maxlength: 50 },
+  country: { type: String, minlength: 1, required: true },
+  city: { type: String, required: true, maxlength: 1024 },
+  state: { type: String, required: true, maxlength: 1024 },
+  verified: Boolean,
+});
+const Address = mongoose.model("address", addressSchema);
+
+function validateAddress(arg) {
+  const schema = Joi.object({
+    street: Joi.string().min(5).max(50).required(),
+    country: Joi.string().min(1).max(255).required(),
+    city: Joi.string().min(5).required(),
+    state: Joi.string().min(3).required(),
+    verified: Joi.bool(),
+  });
+  return schema.validate(arg);
+}
+
 exports.Users = Users;
+exports.Address = Address;
+exports.validateAddress = validateAddress;
 exports.validate = validateUser;

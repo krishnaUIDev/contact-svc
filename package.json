@@ -16,6 +16,7 @@
   "author": "krishna",
   "license": "ISC",
   "dependencies": {
+    "address-validator": "^0.2.3",
     "bcrypt": "^5.0.0",
     "compression": "^1.7.4",
     "config": "^3.3.1",
