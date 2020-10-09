@@ -16,3 +16,17 @@ Load test with clinic and autoCannon
 Req/Bytes counts sampled once per second.
 
 5k requests in 11.06s, 1.59 MB read
+
+**Commands**
+
+#### To run clinic
+
+```shell
+  "clinic": "clinic doctor -- node index.js",
+```
+
+#### To run autocannon
+
+```shell
+    "autocannon": "autocannon -c 5 -a 1500 localhost:3001"
+```
