@@ -7,7 +7,9 @@
     "test": "jest --watchAll --verbose --coverage",
     "start": "node index.js",
     "commit": "git add . && git commit -m 'added'",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "clinic": "clinic doctor -- node index.js",
+    "autocannon": "autocannon -c 5 -a 1500 localhost:3001"
   },
   "engines": {
     "node": "12.18.3",
@@ -19,7 +21,9 @@
     "address-validator": "^0.2.3",
     "autocannon": "^6.5.0",
     "bcrypt": "^5.0.0",
+    "clinic": "^7.0.0",
     "compression": "^1.7.4",
+    "concurrently": "^5.3.0",
     "config": "^3.3.1",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
