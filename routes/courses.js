@@ -6,6 +6,7 @@ const admin = require("../middleware/admin");
 
 router.get("/", async (req, res) => {
   const courses = await Course.find().sort("name");
+  console.log(courses, "--");
   res.send(courses);
 });
 
