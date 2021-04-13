@@ -6,6 +6,7 @@ const home = require("../routes/home");
 const users = require("../routes/users");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
+const getConfig = require("../routes/getConfig");
 
 module.exports = function (app) {
   app.use(express.json()); // req.body
@@ -17,6 +18,7 @@ module.exports = function (app) {
   app.use("/", home);
   // autheiticatoin
   app.use("/api/users", users);
+  app.use("/api/getConfig", getConfig);
   app.use("/api/auth", auth);
   // logger
   app.use(error);

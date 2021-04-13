@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --verbose --coverage",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "commit": "git add . && git commit -m 'added'",
     "deploy": "git push heroku master",
     "clinic": "clinic doctor -- node index.js",
