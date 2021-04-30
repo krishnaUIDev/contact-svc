@@ -10,4 +10,6 @@ Tech Stack:
    autocannon
    pm2
    pg
+   Docker
+   OpenShift
 ```
