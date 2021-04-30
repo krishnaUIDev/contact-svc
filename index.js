@@ -44,5 +44,6 @@ require("./startup/db")();
 require("./startup/config")();
 require("./startup/validation")();
 require("./startup/prod")(app);
+
 const port = process.env.PORT || config.get("PORT");
 app.listen(port, () => console.log(`Listening on port ${port}...`));

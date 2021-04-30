@@ -1,12 +1,23 @@
 const { Course, validate } = require("../models/courses.model");
 const express = require("express");
 const router = express.Router();
+const redis = require("redis");
 const auth = require("../middleware/auth");
 const admin = require("../middleware/admin");
 
+const keys = require("../extra/keys");
+const redisMiddleware = require("../middleware/redis-middleware");
+
+router.use(redisMiddleware);
+
+let client = redis.createClient({
+  host: keys.redisHost,
+  port: keys.redisPort,
+});
+
 router.get("/", async (req, res) => {
   const courses = await Course.find().sort("name");
-  console.log(courses, "--");
+  client.set("courses", courses);
   res.send(courses);
 });
 
