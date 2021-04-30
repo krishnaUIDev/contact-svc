@@ -9,7 +9,8 @@
     "commit": "git add . && git commit -m 'added'",
     "deploy": "git push heroku master",
     "clinic": "clinic doctor -- node index.js",
-    "autocannon": "autocannon -c 5 -a 1500 localhost:3001"
+    "autocannon": "autocannon -c 5 -a 1500 localhost:3001",
+    "loadtest": "loadtest -n 1000 -c 1000 --rps 500 http://localhost:3001/api/fibonacci?number=5"
   },
   "engines": {
     "node": "12.18.3",
@@ -19,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "address-validator": "^0.2.3",
+    "amqplib": "^0.7.1",
     "autocannon": "^6.5.0",
     "bcrypt": "^5.0.0",
     "clinic": "^7.0.0",
@@ -35,15 +37,16 @@
     "joi-objectid": "^3.0.1",
     "joi-password-complexity": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
+    "loadtest": "^5.1.2",
     "lodash": "^4.17.19",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.26",
+    "mongoose": "^5.12.7",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
     "pg": "^8.3.0",
     "prom-client": "^12.0.0",
-    "pug": "^3.0.0",
+    "pug": "^3.0.2",
     "underscore": "^1.10.2",
     "winston": "^3.3.3",
     "winston-mongodb": "^5.0.1"

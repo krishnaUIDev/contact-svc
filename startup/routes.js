@@ -7,6 +7,7 @@ const users = require("../routes/users");
 const auth = require("../routes/auth");
 const error = require("../middleware/error");
 const getConfig = require("../routes/getConfig");
+const getFeb = require("../routes/feb");
 
 module.exports = function (app) {
   app.use(express.json()); // req.body
@@ -21,5 +22,7 @@ module.exports = function (app) {
   app.use("/api/getConfig", getConfig);
   app.use("/api/auth", auth);
   // logger
+  //testing clusters
+  app.use("/api/fibonacci", getFeb);
   app.use(error);
 };
