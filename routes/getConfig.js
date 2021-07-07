@@ -21,14 +21,26 @@ function pick(object, keys) {
   }, {});
 }
 
+router.get("/all", (req, res) => {
+  res.send(obj);
+});
+
 router.get("/:id", (req, res) => {
   const value = req.params.id;
   const keys = value.split(",");
-  if (value) {
-    const filterdVal = pick(obj, keys);
-    res.send(filterdVal);
-    return;
-  }
+
+  const sendVal = keys.map((key) => {
+    return {
+      [key]: config.has(key) ? config.get(key) : undefined,
+    };
+  });
+  console.log(sendVal);
+  res.send(sendVal);
+  // if (value) {
+  //   const filterdVal = pick(obj, keys);
+  //   res.send(filterdVal);
+  //   return;
+  // }
 });
 
 module.exports = router;
