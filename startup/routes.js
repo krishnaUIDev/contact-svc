@@ -8,10 +8,12 @@ const auth = require("../routes/auth");
 const error = require("../middleware/error");
 const getConfig = require("../routes/getConfig");
 const getFeb = require("../routes/feb");
+const loadTest = require("../routes/loadTest");
 
 module.exports = function (app) {
   app.use(express.json()); // req.body
   app.use(cors());
+  // app.use(helmet());
   app.use(express.urlencoded({ extended: true })); // to loges the reqest into terminal
   app.use(express.static("public")); // to server static content
   // routes setup
@@ -24,5 +26,7 @@ module.exports = function (app) {
   // logger
   //testing clusters
   app.use("/api/fibonacci", getFeb);
+  app.use("/api/loadTest", loadTest);
+
   app.use(error);
 };

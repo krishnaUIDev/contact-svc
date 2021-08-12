@@ -1,0 +1,85 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add autocannon-reporter
+
+PATH: 
+  C:\Users\KRISHNA\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\KRISHNA\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\nodejs;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Yarn\bin;C:\Users\KRISHNA\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\jdk-12.0.1\bin;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Windows\System32;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\4.4\bin;C:\Program Files\PostgreSQL\12\bin;C:\Program Files\Redis;C:\Program Files\Git\usr\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Amazon\AWSCLIV2;C:\Users\KRISHNA\AppData\Local\hyper\app-2.1.0\resources\bin;C:\Users\KRISHNA\AppData\Local\Yarn\bin;C:\Program\node_modules;C:\Program Files\heroku\bin;C:\Users\KRISHNA\go\bin;C:\Users\KRISHNA\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Docker Toolbox;C:\Users\KRISHNA\AppData\Local\GitHubDesktop\bin;C:\flutter\flutter\bin;C:\Users\KRISHNA\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  12.18.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'G:\contact-svc\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+
+npm manifest: 
+  {
+    "name": "contact-svc",
+    "version": "1.0.0-beta",
+    "description": "micro service for ui-webkit",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest --watchAll --verbose --coverage",
+      "start": "nodemon index.js",
+      "commit": "git add . && git commit -m 'added'",
+      "deploy": "git push heroku master",
+      "clinic": "clinic doctor -- node index.js",
+      "autocannon": "autocannon -c 5 -a 100 http://localhost:3001/api/courses",
+      "loadtest": "loadtest -n 1000 -c 1000 --rps 500 http://localhost:3001/api/fibonacci?number=5",
+      "perf": "node loadTest.js"
+    },
+    "engines": {
+      "node": "12.18.3",
+      "npm": "6.14.6"
+    },
+    "author": "krishna",
+    "license": "ISC",
+    "dependencies": {
+      "address-validator": "^0.2.3",
+      "amqplib": "^0.7.1",
+      "autocannon": "^6.5.0",
+      "bcrypt": "^5.0.0",
+      "clinic": "^7.0.0",
+      "compression": "^1.7.4",
+      "concurrently": "^5.3.0",
+      "config": "^3.3.1",
+      "cors": "^2.8.5",
+      "debug": "^4.1.1",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-async-errors": "^3.1.1",
+      "helmet": "^3.23.3",
+      "joi": "^17.1.1",
+      "joi-objectid": "^3.0.1",
+      "joi-password-complexity": "^4.2.0",
+      "jsonwebtoken": "^8.5.1",
+      "loadtest": "^5.1.2",
+      "lodash": "^4.17.19",
+      "mongodb": "^3.5.9",
+      "mongoose": "^5.12.7",
+      "morgan": "^1.10.0",
+      "nodemailer": "^6.4.11",
+      "nodemon": "^2.0.4",
+      "pg": "^8.3.0",
+      "prom-client": "^12.0.0",
+      "pug": "^3.0.2",
+      "redis": "^3.1.2",
+      "underscore": "^1.10.2",
+      "winston": "^3.3.3",
+      "winston-mongodb": "^5.0.1"
+    },
+    "devDependencies": {
+      "jest": "^26.4.0",
+      "jshint": "^2.11.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

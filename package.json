@@ -9,7 +9,7 @@
     "commit": "git add . && git commit -m 'added'",
     "deploy": "git push heroku master",
     "clinic": "clinic doctor -- node index.js",
-    "autocannon": "autocannon -c 5 -a 1500 localhost:3001",
+    "autocannon": "autocannon -c 100 -d 30 -p 10 http://localhost:3001/api/courses",
     "loadtest": "loadtest -n 1000 -c 1000 --rps 500 http://localhost:3001/api/fibonacci?number=5"
   },
   "engines": {
@@ -22,6 +22,7 @@
     "address-validator": "^0.2.3",
     "amqplib": "^0.7.1",
     "autocannon": "^6.5.0",
+    "autocannon-reporter": "^1.1.0",
     "bcrypt": "^5.0.0",
     "clinic": "^7.0.0",
     "compression": "^1.7.4",
