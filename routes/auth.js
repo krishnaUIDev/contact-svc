@@ -4,6 +4,9 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
+const validateReqSchema = require("../middleware/validateReqSchema");
+const schema = require("./SchemaValidators/schemaValidation");
+
 //const jwt = require("jsonwebtoken");
 
 router.post("/", async (req, res) => {
@@ -21,6 +24,30 @@ router.post("/", async (req, res) => {
   // const token = jwt.sign({ _id: user._id }, config.get("jwtPrivateKey"));
   res.send(token);
 });
+
+router.post(
+  "/testValidator",
+  schema,
+  validateReqSchema,
+  async (req, res, next) => {
+    res.send({ name: "" });
+  }
+);
+
+// router.post(
+//   "/testValidator",
+//   schema,
+//   validateReqSchema,
+//   async (req, res, next) => {
+//     axios({
+//       method: "post",
+//       url: "http://localhost:3001/api/courses",
+//       data: {},
+//     })
+//       .then((response) => console.log(response))
+//       .catch(next);
+//   }
+// );
 
 // Infromation Expert Principle
 
